@@ -11,7 +11,7 @@ namespace AOC2023
 
         public static void SolvePart1()
         {
-            using (var reader = File.OpenText("dayinput.txt"))
+            using (var reader = File.OpenText("day1input.txt"))
             {
 
                 var result = 0;
