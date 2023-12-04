@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
-namespace AOC2023
+namespace AOC2023.Day1
 {
     internal class Day1
     {
 
         public static void SolvePart1()
         {
-            using (var reader = File.OpenText("day1input.txt"))
+            using (var reader = File.OpenText("../../../Day1/day1input.txt"))
             {
 
                 var result = 0;
@@ -32,22 +28,21 @@ namespace AOC2023
                         }
                     }
 
-                    
-                    result += (int.Parse($"{num1.Value}{num2.Value}"));
+
+                    result += int.Parse($"{num1.Value}{num2.Value}");
 
                     currentLine = reader.ReadLine() ?? "";
                 }
 
                 Console.WriteLine($"part 1 result {result}");
-                Console.ReadKey();
             }
         }
 
         public static void SolvePart2()
         {
 
-            //using (var reader = File.OpenText("temp.txt"))
-            using (var reader = File.OpenText("day1input.txt"))
+
+            using (var reader = File.OpenText("../../../Day1/day1input.txt"))
             {
 
                 var result = 0;
@@ -73,10 +68,10 @@ namespace AOC2023
                         }
                         else
                         {
-                            
+
                             wordbuffer.Append(c);
-                            var numVal= StringContainsNumber(wordbuffer.ToString());
-                            if(numVal != null)
+                            var numVal = StringContainsNumber(wordbuffer.ToString());
+                            if (numVal != null)
                             {
                                 num1 ??= numVal;
                                 num2 = numVal;
@@ -84,14 +79,12 @@ namespace AOC2023
                         }
                     }
 
-                    Console.WriteLine($"{currentLine} {num1} {num2}");
-                    result += (int.Parse($"{num1.Value}{num2.Value}"));
+                    result += int.Parse($"{num1.Value}{num2.Value}");
 
                     currentLine = reader.ReadLine() ?? "";
                 }
 
                 Console.WriteLine($"part 2 result {result}");
-                Console.ReadKey();
             }
         }
 

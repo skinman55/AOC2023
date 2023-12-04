@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AOC2023
+﻿namespace AOC2023.Day2
 {
     internal class Day2
     {
 
         public static void SolvePart1()
         {
-            using (var reader = File.OpenText("day2input.txt"))
+            using (var reader = File.OpenText("../../../Day2/day2input.txt"))
             {
 
                 var result = 0;
@@ -21,14 +14,10 @@ namespace AOC2023
                 while (currentLine != "")
                 {
 
-                   //Console.WriteLine(GetGameValue(currentLine));
-                   var game = ParseGameFromLine(currentLine);
-
-                    Console.WriteLine($"{game.ID},{game.IsPossible},{game.Red},{game.Green},{game.Blue}, {game.TotalCubes},\"{currentLine}\"");
+                    var game = ParseGameFromLine(currentLine);
 
                     if (game.IsPossible)
                     {
-                        //    Console.WriteLine($"{game.ID},{game.IsPossible},{game.Red},{game.Green},{game.Blue}, {game.TotalCubes},\"{currentLine}\"");
                         result += game.ID;
                     }
 
@@ -37,14 +26,13 @@ namespace AOC2023
                 }
 
                 Console.WriteLine($"part 1 result {result}");
-                Console.ReadKey();
             }
         }
 
 
         public static void SolvePart2()
         {
-            using (var reader = File.OpenText("day2inputsample.txt"))
+            using (var reader = File.OpenText("../../../Day2/day2input.txt"))
             {
 
                 var result = 0;
@@ -54,13 +42,12 @@ namespace AOC2023
                 {
 
                     result += GetGameValue(currentLine);
-                    
+
 
                     currentLine = reader.ReadLine() ?? "";
                 }
 
                 Console.WriteLine($"part 2 result {result}");
-                Console.ReadKey();
             }
         }
 
@@ -139,9 +126,6 @@ namespace AOC2023
                                 game.Blue = throwNumber;
                             }
                             break;
-                        default:
-                            Console.WriteLine("unexpected color");
-                            break;
                     }
                 }
             }
@@ -151,12 +135,12 @@ namespace AOC2023
             return game;
         }
 
-      
+
 
         private class Game
         {
-            public int ID { get; init;}
-            public int Red { get; set;}
+            public int ID { get; init; }
+            public int Red { get; set; }
             public int Green { get; set; }
             public int Blue { get; set; }
 
