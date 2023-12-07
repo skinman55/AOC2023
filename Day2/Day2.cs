@@ -1,4 +1,4 @@
-﻿namespace AOC2023.Day2
+﻿namespace AOC2023
 {
     internal class Day2
     {

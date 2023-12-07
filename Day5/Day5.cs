@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Diagnostics.Tracing;
 using System.Reflection;
 
-namespace AOC2023.Day5
+namespace AOC2023
 {
     internal class Day5
     {

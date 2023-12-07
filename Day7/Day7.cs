@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace AOC2023
 {
-    internal class Day6
+    internal class Day7
     {
        
         public static void Solve()

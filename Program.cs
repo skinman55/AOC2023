@@ -1,10 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using AOC2023.Day1;
-using AOC2023.Day2;
-using AOC2023.Day3;
-using AOC2023.Day4;
-using AOC2023.Day5;
+using AOC2023;
 
 //Day1.Solve();
 //Day1.SolvePart2();
@@ -24,7 +20,10 @@ using AOC2023.Day5;
 //var day5 = new Day5();
 //await day5.Solve();
 
-Day6.Solve();
+
+//Day6.Solve();
+
+Day7.Solve();
 
 
 
