@@ -23,7 +23,8 @@ using AOC2023;
 
 //Day6.Solve();
 
-Day7.Solve();
+Day7Part1.Solve();
+Day7Part2.Solve();
 
 
 

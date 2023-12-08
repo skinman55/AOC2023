@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace AOC2023
 {
-    internal class Day7
+    internal class Day7Part1
     {
 
         public static void Solve()
@@ -17,7 +17,7 @@ namespace AOC2023
             var lines = File.ReadAllLines("day7Input.txt");
             foreach (var line in lines)
             {
-                
+
                 var sa = line.Split(" ");
                 var bid = int.Parse(sa[1]);
 
@@ -82,11 +82,11 @@ namespace AOC2023
             var sortedHands = hands.OrderBy(x => x).ToList();
             foreach (var hand in sortedHands)
             {
-               result += (hand.Bid * rankIndex);
-               rankIndex++;
+                result += (hand.Bid * rankIndex);
+                rankIndex++;
             }
 
-            Console.WriteLine("Result: " + result);
+            Console.WriteLine("Part 1 Result: " + result);
         }
 
 
@@ -247,8 +247,8 @@ namespace AOC2023
                 return $"{string.Join(' ', Cards.Select(x => x.ID)).Replace(" ", "")} {GetHandValue()}";
             }
 
-          
-            
+
+
         }
 
     }
