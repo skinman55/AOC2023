@@ -31,9 +31,8 @@ using AOC2023;
 
 //Day9.Solve();
 
-//FAILED!
-//var day10 = new Day10();
-//day10.Solve();
+var day10 = new Day10();
+day10.Solve();
 
 
 
