@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Text.RegularExpressions;
 
 namespace AOC2023
@@ -10,7 +11,8 @@ namespace AOC2023
             
             var lines = File.ReadAllLines("Day9Input.txt");
 
-            var result = 0;
+            var p1Result = 0;
+            var p2Result = 0;
 
 
             foreach (var line in lines)
@@ -40,6 +42,7 @@ namespace AOC2023
                         keepGoing = false;
                     }
                 }
+                //part1
 
                 //add a new zero to the end of your list of zeroes
                 var lastRow = data[^1];
@@ -54,18 +57,33 @@ namespace AOC2023
                     data[j -1] = newRow;
 
                 }
-                result += (data[0][data[0].Length-1]);
-                
-             
+                p1Result += (data[0][data[0].Length-1]);
+
+                //part2
+                data[^1] = new int[lastRow.Length + 1];
+
+                //add a new zero to the beginning of your list of zeroes
+                lastRow = data[^1];
+                data[^1] = new int[lastRow.Length + 1];
+
+                for (var j = data.Count - 1; j > 0; j--)
+                {
+                    var newRow = new int[data[j - 1].Length + 1];
+
+                    var n = data[j - 1][0] - data[j][0];
+                    newRow[0] = n;
+
+                    Array.Copy(data[j - 1], 0, newRow,1, data[j - 1].Length);
+
+                    data[j - 1] = newRow;
+
+                }
+                p2Result += (data[0][0]);
             }
-
-            
-
-            Console.WriteLine("Part1 Result: " + result);
-
-
+           
+            Console.WriteLine("Part1 Result: " + p1Result);
+            Console.WriteLine("Part2 Result: " + p2Result);
         }
-
     }
 
 }
